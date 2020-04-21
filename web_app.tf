@@ -11,7 +11,7 @@ resource "aws_spot_instance_request" "web_app" {
   wait_for_fulfillment = "${var.wait_for_fulfillment}"
   spot_type            = "${var.spot_type}"
 
-  user_data = "${file("${path.module}/scripts/user_data.sh")}"
+  user_data = "${file("${path.module}/user_data.sh")}"
   iam_instance_profile = "web_app_role"
 
   tags {
